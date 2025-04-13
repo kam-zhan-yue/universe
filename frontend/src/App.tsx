@@ -8,6 +8,7 @@ import {
 import "./App.css";
 import { useRef, useState } from "react";
 import { Mesh } from "three";
+import { OrbitControls } from "@react-three/drei";
 
 interface CubeProps {
   position: Vector3;
@@ -125,14 +126,14 @@ function App() {
         <group position={[0, 0, 0]}>
           <Cube position={[2, 0, 0]} size={[2, 2, 2]} colour="orange" />
           <Sphere
-            position={[-2, 0, 0]}
+            position={[0, 0, 0]}
             radius={1}
             widthSegments={30}
             heightSegments={30}
             colour="pink"
           />
           <Torus
-            position={[0, 0, 0]}
+            position={[-2, 0, 0]}
             radius={0.5}
             tube={0.1}
             radialSegments={30}
@@ -141,6 +142,7 @@ function App() {
             colour="blue"
           />
         </group>
+        <OrbitControls enableZoom={false} />
       </Canvas>
     </>
   );
